@@ -1,149 +1,189 @@
-/* ===== HERO SECTION ===== */
-.hero-title {
-  font-size: 2.25rem;
-  font-weight: 600;
+/* ===== HERO SECTION (BEM Methodology) ===== */
+
+/* Hero title: Main page heading with large typography */
+.hero__title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-semibold);
   line-height: 1.1;
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-8);
+  font-family: var(--font-family-primary);
+  color: var(--color-text-primary);
 }
 
+/* Responsive hero title scaling */
 @media (min-width: 768px) {
-  .hero-title {
-    font-size: 4rem;
+  .hero__title {
+    font-size: var(--font-size-6xl);
   }
 }
 
-/* ===== SERVICES SECTION ===== */
-.services-grid {
+/* ===== SERVICES SECTION (BEM Methodology) ===== */
+
+/* Services grid: Responsive grid layout for service cards */
+.services__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: var(--spacing-10);
 }
 
-.service-card {
+/* Service card: Individual service item container */
+.service__card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-4);
 }
 
-.service-id {
-  font-size: 0.875rem;
-  color: black;
-  font-weight: 500;
+/* Service ID: Numerical identifier for each service */
+.service__id {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-primary);
 }
 
-.service-title {
-  font-size: 1.25rem;
-  font-weight: 500;
+/* Service title: Name/heading of the service */
+.service__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-primary);
+  color: var(--color-text-primary);
 }
 
+/* Responsive services grid */
 @media (min-width: 768px) {
-  .services-grid {
+  .services__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .services-grid {
+  .services__grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* ===== FEATURES SECTION ===== */
-.features-list {
+/* ===== FEATURES SECTION (BEM Methodology) ===== */
+
+/* Features list: Container for all feature items */
+.features__list {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: var(--spacing-12);
 }
 
-.feature-item {
+/* Feature item: Individual feature with icon and content */
+.feature__item {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid #e5e7eb;
+  gap: var(--spacing-4);
+  padding-bottom: var(--spacing-12);
+  border-bottom: 1px solid var(--color-gray-200);
   max-width: 48rem;
 }
 
-.feature-item:last-child {
+/* Remove border from last feature item */
+.feature__item:last-child {
   border-bottom: none;
 }
 
-.feature-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-top: 0.25rem;
+/* Feature icon: SVG icon for each feature */
+.feature__icon {
+  width: var(--spacing-6);
+  height: var(--spacing-6);
+  margin-top: var(--spacing-1);
   flex-shrink: 0;
+  color: var(--color-text-primary);
 }
 
-.feature-content h4 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+/* Feature content: Text content wrapper */
+.feature__content {
+  flex: 1;
 }
 
-/* ===== NOT FOUND PAGE ===== */
-.notfound-main {
-  min-height: calc(100vh - 5rem); /* Full height minus navbar */
-  padding-top: 5rem; /* Account for fixed navbar */
+/* Feature title: Heading for each feature */
+.feature__title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-4);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
 }
 
-.notfound-section {
+/* ===== NOT FOUND PAGE (BEM Methodology) ===== */
+
+/* NotFound main: Full height container for 404 page */
+.notfound__main {
+  min-height: calc(100vh - var(--navbar-height));
+  padding-top: var(--navbar-height);
+}
+
+/* NotFound section: Centered content section */
+.notfound__section {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 5rem); /* Same as main */
-  padding: 2rem 1rem;
+  min-height: calc(100vh - var(--navbar-height));
+  padding: var(--spacing-8) var(--spacing-4);
 }
 
-.notfound-content {
+/* NotFound content: Text content wrapper */
+.notfound__content {
   text-align: center;
   max-width: 36rem;
   margin: 0 auto;
 }
 
-.notfound-code {
-  font-family: var(--font-space-grotesk);
-  font-size: 8rem;
-  font-weight: 600;
-  color: var(--primary);
+/* NotFound code: Large 404 number display */
+.notfound__code {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-8xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-500);
   line-height: 1;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-4);
 }
 
-.notfound-title {
-  font-family: var(--font-space-grotesk);
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: var(--text-dark);
+/* NotFound title: Error page heading */
+.notfound__title {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-6);
+  color: var(--color-text-primary);
 }
 
-.notfound-description {
-  margin-bottom: 2.5rem;
-  font-size: 1.125rem;
+/* NotFound description: Error explanation text */
+.notfound__description {
+  margin-bottom: var(--spacing-10);
+  font-size: var(--font-size-lg);
   max-width: 32rem;
   margin-left: auto;
   margin-right: auto;
+  color: var(--color-text-primary);
 }
 
-.notfound-actions {
+/* NotFound actions: Button container */
+.notfound__actions {
   display: flex;
   justify-content: center;
 }
 
-.notfound-actions a {
+/* Remove default link styling in actions */
+.notfound__actions a {
   text-decoration: none;
 }
 
+/* Responsive NotFound styles */
 @media (min-width: 768px) {
-  .notfound-code {
-    font-size: 12rem;
+  .notfound__code {
+    font-size: var(--font-size-12xl);
   }
 
-  .notfound-title {
-    font-size: 3rem;
+  .notfound__title {
+    font-size: var(--font-size-5xl);
   }
 
-  .notfound-section {
-    padding: 4rem 2rem;
+  .notfound__section {
+    padding: var(--spacing-16) var(--spacing-8);
   }
 }

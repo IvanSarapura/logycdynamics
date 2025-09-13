@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen">
+      <main className="u-min-height-screen">
         <Hero />
         <AboutUs />
         <Services />

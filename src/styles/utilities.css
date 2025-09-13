@@ -1,94 +1,176 @@
-/* ===== UTILITY CLASSES ===== */
+/* ===== UTILITY CLASSES (BEM Methodology) ===== */
 
-/* Layout utilities */
-.min-h-screen {
+/* ===== LAYOUT UTILITIES ===== */
+
+/* Full screen height utility accounting for fixed navbar */
+.u-min-height-screen {
   min-height: 100vh;
-  padding-top: 5rem; /* Account for fixed navbar */
+  padding-top: var(--navbar-height);
 }
 
-/* Typography utilities */
-.underline-word {
+/* ===== TYPOGRAPHY UTILITIES ===== */
+
+/* Decorative underline for emphasized words */
+.u-underline-word {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
 }
 
-/* Spacing utilities */
-.mb-2 {
-  margin-bottom: 2rem;
-}
-
-.mb-4 {
-  margin-bottom: 4rem;
-}
-
-.mt-4 {
-  margin-top: 4rem;
-}
-
-/* Flexbox utilities */
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.gap-1 {
-  gap: 1rem;
-}
-
-.gap-2 {
-  gap: 2rem;
-}
-
-/* Text utilities */
-.text-center {
+/* Text alignment utilities */
+.u-text-center {
   text-align: center;
 }
 
-.text-white {
-  color: white;
+.u-text-left {
+  text-align: left;
 }
 
-.font-normal {
-  font-weight: normal;
+.u-text-right {
+  text-align: right;
 }
+
+/* Font weight utilities */
+.u-font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.u-font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.u-font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ===== COLOR UTILITIES ===== */
+
+/* Text color utilities */
+.u-text-white {
+  color: var(--color-white);
+}
+
+.u-text-black {
+  color: var(--color-black);
+}
+
+.u-text-primary {
+  color: var(--color-text-primary);
+}
+
+.u-text-secondary {
+  color: var(--color-text-secondary);
+}
+
+/* ===== SPACING UTILITIES ===== */
+
+/* Margin utilities */
+.u-margin-bottom-4 {
+  margin-bottom: var(--spacing-4);
+}
+
+.u-margin-bottom-8 {
+  margin-bottom: var(--spacing-8);
+}
+
+.u-margin-bottom-16 {
+  margin-bottom: var(--spacing-16);
+}
+
+.u-margin-top-16 {
+  margin-top: var(--spacing-16);
+}
+
+/* ===== FLEXBOX UTILITIES ===== */
+
+/* Display utilities */
+.u-flex {
+  display: flex;
+}
+
+.u-inline-flex {
+  display: inline-flex;
+}
+
+/* Flex direction utilities */
+.u-flex-column {
+  flex-direction: column;
+}
+
+.u-flex-row {
+  flex-direction: row;
+}
+
+/* Alignment utilities */
+.u-items-center {
+  align-items: center;
+}
+
+.u-items-start {
+  align-items: flex-start;
+}
+
+.u-items-end {
+  align-items: flex-end;
+}
+
+.u-justify-center {
+  justify-content: center;
+}
+
+.u-justify-between {
+  justify-content: space-between;
+}
+
+.u-justify-start {
+  justify-content: flex-start;
+}
+
+/* Gap utilities */
+.u-gap-4 {
+  gap: var(--spacing-4);
+}
+
+.u-gap-8 {
+  gap: var(--spacing-8);
+}
+
+.u-gap-12 {
+  gap: var(--spacing-12);
+}
+
+/* ===== WIDTH UTILITIES ===== */
 
 /* Width utilities */
-.w-full {
+.u-width-full {
   width: 100%;
 }
 
-.max-w-sm {
+.u-width-auto {
+  width: auto;
+}
+
+/* Max-width utilities */
+.u-max-width-sm {
   max-width: 24rem;
 }
 
-.max-w-md {
+.u-max-width-md {
   max-width: 28rem;
 }
 
-.max-w-lg {
+.u-max-width-lg {
   max-width: 32rem;
 }
 
-.max-w-xl {
+.u-max-width-xl {
   max-width: 36rem;
 }
 
-.max-w-2xl {
+.u-max-width-2xl {
   max-width: 42rem;
 }
 
-.max-w-3xl {
+.u-max-width-3xl {
   max-width: 48rem;
 }

@@ -1,162 +1,198 @@
-/* ===== BUTTON COMPONENTS ===== */
-.btn {
+/* ===== BUTTON COMPONENT (BEM Methodology) ===== */
+
+/* Button: Base button component with consistent styling */
+.button {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-family: var(--font-space-grotesk);
-  font-size: 0.875rem;
-  font-weight: 500;
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: var(--border-radius-full);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
   text-align: center;
-  transition: all 0.2s ease-in-out;
+  transition: all var(--transition-base);
   cursor: pointer;
   border: none;
+  text-decoration: none;
 }
 
-.btn-outline {
-  border: 1px solid black;
-  color: black;
+/* Button variants (modifiers) */
+.button--outline {
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
   background-color: transparent;
 }
 
-.btn-outline:hover {
-  background-color: black;
-  color: white;
+.button--outline:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
-.btn-primary {
-  background-color: #f5ede3;
-  color: black;
+.button--primary {
+  background-color: var(--color-accent-50);
+  color: var(--color-black);
   border: none;
 }
 
-.btn-primary:hover {
-  background-color: white;
+.button--primary:hover {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
 }
 
-.btn-outline-beige {
-  border: 1px solid black;
-  color: black;
-  background-color: #f5ede3;
+.button--outline-beige {
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
+  background-color: var(--color-accent-50);
 }
 
-.btn-outline-beige:hover {
-  background-color: white;
+.button--outline-beige:hover {
+  background-color: var(--color-white);
 }
 
-/* ===== NAVBAR COMPONENT ===== */
+/* ===== NAVBAR COMPONENT (BEM Methodology) ===== */
+
+/* Navbar: Fixed navigation bar with backdrop blur */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 50;
+  z-index: var(--z-index-fixed);
   background-color: rgba(255, 255, 255, 0.9);
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transition-slow);
   backdrop-filter: blur(5px);
 }
 
-.navbar.scrolled {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Navbar state when scrolled */
+.navbar--scrolled {
+  box-shadow: var(--shadow-md);
 }
 
-.navbar-container {
+/* Navbar container: Inner wrapper with max-width and padding */
+.navbar__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 1rem;
-  max-width: 1280px;
+  padding: var(--spacing-6) var(--spacing-4);
+  max-width: var(--container-max-width);
   margin: 0 auto;
 }
 
-.navbar-logo {
-  font-size: 1.25rem;
-  font-weight: 500;
+/* Navbar logo: Brand/company name */
+.navbar__logo {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
   text-decoration: underline;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.navbar-links {
-  display: none;
-}
-
-.navbar-link {
-  font-size: 0.875rem;
-  font-weight: 400;
+  font-family: var(--font-family-primary);
+  color: var(--color-text-primary);
   background: none;
   border: none;
   cursor: pointer;
-  transition: color 0.2s ease-in-out;
-  font-family: var(--font-space-grotesk);
-  color: #1f2937;
+}
+
+/* Navbar links container: Navigation menu wrapper */
+.navbar__links {
+  display: none;
+}
+
+/* Navbar link: Individual navigation items */
+.navbar__link {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-base);
+  font-family: var(--font-family-primary);
+  color: var(--color-primary-500);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 0;
+  padding: var(--spacing-2) 0;
 }
 
-.navbar-link:hover span {
-  color: #000;
+/* Navbar link hover state */
+.navbar__link:hover span {
+  color: var(--color-black);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
+/* Responsive navbar styles */
 @media (min-width: 768px) {
-  .navbar-container {
-    padding: 1.5rem 2rem;
+  .navbar__container {
+    padding: var(--spacing-6) var(--spacing-8);
   }
 
-  .navbar-links {
+  .navbar__links {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: var(--spacing-8);
   }
 }
 
-/* ===== FOOTER COMPONENT ===== */
+/* ===== FOOTER COMPONENT (BEM Methodology) ===== */
+
+/* Footer: Site footer with dark background */
 .footer {
-  background-color: var(--footer-bg);
-  color: white;
-  padding: 1.5rem 1rem;
+  background-color: var(--color-footer-bg);
+  color: var(--color-white);
+  padding: var(--spacing-6) var(--spacing-4);
 }
 
-.footer-container {
-  max-width: 1280px;
+/* Footer container: Inner wrapper with max-width */
+.footer__container {
+  max-width: var(--container-max-width);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: var(--spacing-4);
 }
 
-.footer-text {
-  font-size: 0.875rem;
+/* Footer text: Copyright and general text */
+.footer__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-white);
 }
 
-.footer-links {
+/* Footer link: Interactive footer links */
+.footer__link {
+  transition: opacity var(--transition-base);
+}
+
+.footer__link:hover {
+  opacity: 0.8;
+}
+
+/* Footer links: Navigation links container */
+.footer__links {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: var(--spacing-6);
 }
 
-.footer-divider {
+/* Footer divider: Visual separator between links */
+.footer__divider {
   width: 1px;
-  height: 1rem;
+  height: var(--spacing-4);
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Responsive footer styles */
 @media (min-width: 768px) {
   .footer {
-    padding: 1.5rem 2rem;
+    padding: var(--spacing-6) var(--spacing-8);
   }
 
-  .footer-container {
+  .footer__container {
     flex-direction: row;
   }
 
-  .footer-text {
-    font-size: 1rem;
+  .footer__text {
+    font-size: var(--font-size-base);
   }
 }

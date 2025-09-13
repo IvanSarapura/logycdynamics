@@ -1,14 +1,91 @@
-/* ===== CSS VARIABLES ===== */
+/* ===== CSS CUSTOM PROPERTIES (CSS VARIABLES) ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
-  --primary: #1f2937;
-  --accent: #9f7aea;
-  --section-bg: #f9f7f3;
-  --footer-bg: #021410;
-  --text-dark: #1a1a1a;
-  --font-space-grotesk: "Space Grotesk", sans-serif;
-  --font-inter: "Inter", sans-serif;
+  /* Color Palette */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-700: #374151;
+  --color-gray-900: #1a1a1a;
+
+  /* Brand Colors */
+  --color-primary-50: #f0f9ff;
+  --color-primary-500: #1f2937;
+  --color-primary-900: #021410;
+  --color-accent-500: #9f7aea;
+  --color-accent-50: #f5ede3;
+
+  /* Semantic Colors */
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-gray-900);
+  --color-text-primary: var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-700);
+  --color-section-bg: #f9f7f3;
+  --color-footer-bg: var(--color-primary-900);
+
+  /* Typography Scale */
+  --font-family-primary: "Space Grotesk", sans-serif;
+  --font-family-secondary: "Inter", sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* Font Sizes (Type Scale) */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+  --font-size-6xl: 4rem; /* 64px */
+  --font-size-8xl: 8rem; /* 128px */
+  --font-size-12xl: 12rem; /* 192px */
+
+  /* Spacing Scale */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 0.75rem; /* 12px */
+  --spacing-4: 1rem; /* 16px */
+  --spacing-5: 1.25rem; /* 20px */
+  --spacing-6: 1.5rem; /* 24px */
+  --spacing-8: 2rem; /* 32px */
+  --spacing-10: 2.5rem; /* 40px */
+  --spacing-12: 3rem; /* 48px */
+  --spacing-16: 4rem; /* 64px */
+  --spacing-20: 5rem; /* 80px */
+
+  /* Layout */
+  --container-max-width: 1280px;
+  --navbar-height: 5rem;
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-base: 0.2s ease-in-out;
+  --transition-slow: 0.3s ease-in-out;
+
+  /* Z-index Scale */
+  --z-index-dropdown: 10;
+  --z-index-sticky: 20;
+  --z-index-fixed: 30;
+  --z-index-modal-backdrop: 40;
+  --z-index-modal: 50;
+  --z-index-popover: 60;
+  --z-index-tooltip: 70;
 }
 
 /* ===== CSS RESET ===== */
@@ -22,99 +99,118 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ===== BASE ELEMENT STYLES ===== */
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-size: 16px;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-size: var(--font-size-base);
   line-height: 1.5;
-  font-family: var(--font-inter);
+  font-family: var(--font-family-secondary);
 }
 
+/* Heading hierarchy with consistent spacing and typography */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-space-grotesk);
-  font-weight: 500;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
   line-height: 1.2;
+  color: var(--color-text-primary);
 }
 
+/* Remove default link styling */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* ===== BASE LAYOUT CLASSES ===== */
+/* ===== LAYOUT COMPONENTS (BEM Methodology) ===== */
+
+/* Container: Main content wrapper with responsive padding */
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: var(--container-max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
 }
 
+/* Section: Standard content section with consistent spacing */
 .section {
-  padding: 5rem 1rem;
+  padding: var(--spacing-20) var(--spacing-4);
 }
 
-.dark-section {
-  background-color: var(--footer-bg);
-  color: white;
+/* Section modifiers for different backgrounds */
+.section--dark {
+  background-color: var(--color-footer-bg);
+  color: var(--color-white);
 }
 
-.section-bg {
-  background-color: var(--section-bg);
+.section--light-bg {
+  background-color: var(--color-section-bg);
 }
 
-/* ===== BASE TYPOGRAPHY CLASSES ===== */
-.title-font {
-  font-family: var(--font-space-grotesk);
+/* ===== TYPOGRAPHY COMPONENTS (BEM Methodology) ===== */
+
+/* Typography utility classes */
+.text {
+  font-family: var(--font-family-secondary);
 }
 
-.content-font {
-  font-family: var(--font-inter);
+.text--title {
+  font-family: var(--font-family-primary);
 }
 
-.section-title {
-  font-size: 0.875rem;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
+/* Section title: Small uppercase labels */
+.section__title {
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-6);
+  font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: black;
+  color: var(--color-text-primary);
 }
 
-.section-heading {
-  font-size: 1.875rem;
-  margin-bottom: 4rem;
+/* Section heading: Main section headings */
+.section__heading {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-16);
   max-width: 42rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
 }
 
-.section-description {
-  font-size: 1rem;
-  font-weight: 400;
+/* Section description: Body text for sections */
+.section__description {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
   line-height: 1.625;
   max-width: 48rem;
-  color: var(--text-dark);
+  color: var(--color-text-primary);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet and desktop responsive adjustments */
 @media (min-width: 768px) {
+  /* Increase container padding on larger screens */
   .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
   }
 
+  /* Increase section padding on larger screens */
   .section {
-    padding: 5rem 2rem;
+    padding: var(--spacing-20) var(--spacing-8);
   }
 
-  .section-heading {
-    font-size: 2.25rem;
+  /* Scale up section headings on larger screens */
+  .section__heading {
+    font-size: var(--font-size-4xl);
   }
 }
 

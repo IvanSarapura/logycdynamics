@@ -7,17 +7,17 @@ const NotFound = () => {
   return (
     <>
       <Navbar />
-      <main className="notfound-main">
-        <section className="section notfound-section section-bg">
+      <main className="notfound__main">
+        <section className="section notfound__section section--light-bg">
           <div className="container">
-            <div className="notfound-content">
-              <div className="notfound-code">404</div>
-              <h1 className="notfound-title">Page Not Found</h1>
-              <p className="section-description notfound-description">
+            <div className="notfound__content">
+              <div className="notfound__code">404</div>
+              <h1 className="notfound__title">Page Not Found</h1>
+              <p className="section__description notfound__description">
                 The page you're looking for doesn't exist or has been moved.
                 Let's get you back to testing excellence.
               </p>
-              <div className="notfound-actions">
+              <div className="notfound__actions">
                 <Link to="/">
                   <Button variant="outline">Go Home</Button>
                 </Link>
