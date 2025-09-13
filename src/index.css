@@ -1,0 +1,7 @@
+@import "./styles/globals.css";
+
+/* Additional global styles specific to the app */
+.min-h-screen {
+  min-height: 100vh;
+  padding-top: 5rem; /* Account for fixed navbar */
+}
