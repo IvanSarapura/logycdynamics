@@ -1,5 +1,4 @@
 import { features } from "../../data/features";
-import "./Features.css";
 
 const Features = () => {
   return (

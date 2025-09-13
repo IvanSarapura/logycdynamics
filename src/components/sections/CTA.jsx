@@ -1,5 +1,4 @@
 import Button from "../ui/Button";
-import "./CTA.css";
 
 const CTA = () => {
   return (

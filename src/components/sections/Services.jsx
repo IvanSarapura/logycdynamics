@@ -1,5 +1,4 @@
 import { services } from "../../data/services";
-import "./Services.css";
 
 const Services = () => {
   return (

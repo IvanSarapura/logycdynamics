@@ -1,4 +1,4 @@
-/* CSS Variables */
+/* ===== CSS VARIABLES ===== */
 :root {
   --background: #ffffff;
   --foreground: #1a1a1a;
@@ -11,7 +11,7 @@
   --font-inter: "Inter", sans-serif;
 }
 
-/* Reset and Base Styles */
+/* ===== CSS RESET ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -46,7 +46,7 @@ a {
   text-decoration: none;
 }
 
-/* Layout Classes */
+/* ===== BASE LAYOUT CLASSES ===== */
 .container {
   width: 100%;
   max-width: 1280px;
@@ -69,7 +69,7 @@ a {
   background-color: var(--section-bg);
 }
 
-/* Typography Classes */
+/* ===== BASE TYPOGRAPHY CLASSES ===== */
 .title-font {
   font-family: var(--font-space-grotesk);
 }
@@ -102,13 +102,7 @@ a {
   color: var(--text-dark);
 }
 
-.underline-word {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
-
-/* Responsive Design */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (min-width: 768px) {
   .container {
     padding-left: 2rem;

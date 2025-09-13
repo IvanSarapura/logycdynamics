@@ -1,5 +1,3 @@
-import "./Button.css";
-
 const Button = ({
   children,
   variant = "primary",

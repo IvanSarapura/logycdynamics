@@ -1,5 +1,3 @@
-import "./AboutUs.css";
-
 const AboutUs = () => {
   return (
     <section id="about-us" className="section">

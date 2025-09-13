@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useScrollEffect } from "../../hooks/useScrollEffect";
 import { smoothScrollTo } from "../../utils/smoothScroll";
-import "./Navbar.css";
 
 const Navbar = () => {
   const isScrolled = useScrollEffect();
