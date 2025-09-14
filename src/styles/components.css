@@ -145,15 +145,14 @@
 .navbar__mobile-toggle {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly; /* Distribución perfectamente uniforme */
   align-items: center;
   width: 44px;
   height: 44px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: var(--spacing-2);
-  gap: 4px;
+  padding: 10px; /* Padding uniforme */
   transition: transform var(--transition-base);
 }
 
@@ -161,27 +160,34 @@
   transform: scale(1.05);
 }
 
-/* Hamburger lines */
+/* Hamburger lines - TODAS ABSOLUTAMENTE IDÉNTICAS */
 .navbar__hamburger-line {
   display: block;
-  width: 24px;
-  height: 2px;
+  width: 18px; /* Ancho exacto para todas */
+  height: 2px; /* Altura exacta para todas */
   background-color: var(--color-text-primary);
   transition: all var(--transition-base);
-  transform-origin: center;
+  transform-origin: center center;
+  flex: none; /* No flex para mantener tamaño exacto */
+  margin: 0; /* Sin márgenes */
+  padding: 0; /* Sin padding */
+  border: none; /* Sin bordes */
+  outline: none; /* Sin outline */
+  box-sizing: border-box; /* Box model consistente */
 }
 
-/* Hamburger animation when active */
+/* Hamburger animation when active - X perfecta y simétrica */
 .navbar__mobile-toggle--active .navbar__hamburger-line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(7px) rotate(45deg); /* Movido un poco más abajo */
 }
 
 .navbar__mobile-toggle--active .navbar__hamburger-line:nth-child(2) {
   opacity: 0;
+  transform: scale(0);
 }
 
 .navbar__mobile-toggle--active .navbar__hamburger-line:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* Mobile menu container */
@@ -195,15 +201,17 @@
   border-top: 1px solid var(--color-gray-200);
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-slow), opacity var(--transition-base);
   opacity: 0;
+  transform: translateY(-10px); /* Inicia ligeramente arriba */
+  transition: all var(--transition-slow); /* Transición unificada para apertura y cierre */
   z-index: var(--z-index-dropdown);
 }
 
-/* Mobile menu when open */
+/* Mobile menu when open - Misma animación en ambas direcciones */
 .navbar__mobile-menu--open {
   max-height: 300px;
   opacity: 1;
+  transform: translateY(0); /* Se desliza a su posición final */
 }
 
 /* Mobile menu links */
@@ -233,24 +241,7 @@
   border-bottom: none;
 }
 
-/* Mobile menu overlay */
-.navbar__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: var(--z-index-modal-backdrop);
-  opacity: 0;
-  animation: fadeIn var(--transition-base) forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
+/* Mobile menu overlay - ELIMINADO para evitar zonas oscurecidas */
 
 /* Responsive navbar styles */
 @media (min-width: 768px) {

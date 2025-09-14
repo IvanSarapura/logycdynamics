@@ -177,14 +177,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay - ONLY for mobile */}
-      {isMobileMenuOpen && (
-        <div
-          className="navbar__overlay"
-          onClick={toggleMobileMenu}
-          aria-hidden="true"
-        />
-      )}
+      {/* Mobile Menu Overlay - ELIMINADO para evitar zonas oscurecidas */}
     </nav>
   );
 };
