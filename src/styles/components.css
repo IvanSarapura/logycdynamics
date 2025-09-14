@@ -13,6 +13,8 @@
   cursor: pointer;
   border: none;
   text-decoration: none;
+  outline: none; /* Elimina el recuadro azul/celeste */
+  -webkit-tap-highlight-color: transparent; /* Elimina highlight en iOS */
 }
 
 /* Button variants (modifiers) */
@@ -154,6 +156,8 @@
   cursor: pointer;
   padding: 10px; /* Padding uniforme */
   transition: transform var(--transition-base);
+  outline: none; /* Elimina el recuadro azul/celeste */
+  -webkit-tap-highlight-color: transparent; /* Elimina highlight en iOS */
 }
 
 .navbar__mobile-toggle:hover {
@@ -230,6 +234,8 @@
   transition: background-color var(--transition-base);
   border-bottom: 1px solid var(--color-gray-100);
   min-height: 56px; /* Touch target for mobile */
+  outline: none; /* Elimina el recuadro azul/celeste */
+  -webkit-tap-highlight-color: transparent; /* Elimina highlight en iOS */
 }
 
 .navbar__mobile-link:hover,
